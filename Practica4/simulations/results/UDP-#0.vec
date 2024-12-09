@@ -1,0 +1,996 @@
+version 2
+run UDP-0-20241209-10:46:52-3648
+attr configname UDP
+attr datetime 20241209-10:46:52
+attr experiment UDP
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network manets
+attr processid 3648
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.nodoFijo1.numApps 1
+param **.nodoFijo2.numApps 1
+param **.nodoFijo1.app[0].typename "\"UdpBasicApp\""
+param **.nodoFijo1.app[0].destAddresses "\"nodoFijo2\""
+param **.nodoFijo1.app[0].destPort 1000
+param **.nodoFijo1.app[0].startTime 5s
+param **.nodoFijo1.app[0].messageLength 50B
+param **.nodoFijo1.app[0].sendInterval 0.25s
+param **.nodoFijo2.app[0].typename "\"UdpEchoApp\""
+param **.nodoFijo2.app[0].localPort 1000
+param **.wlan[*].typename "\"AckingWirelessInterface\""
+param **.wlan[*].bitrate 2Mbps
+param **.wlan[*].mac.headerLength 20B
+param **.wlan[*].radio.typename "\"UnitDiskRadio\""
+param **.wlan[*].radio.transmitter.headerLength 96b
+param **.wlan[*].radio.transmitter.communicationRange 400m
+param **.wlan[*].radio.transmitter.interferenceRange 0m
+param **.wlan[*].radio.transmitter.detectionRange 0m
+param **.wlan[*].radio.receiver.ignoreInterference true
+param *.n 7
+param **.mobility.initFromDisplayString false
+param **.nodoMovil[*].mobility.typename "\"MassMobility\""
+param **.nodoMovil[*].mobility.speed 1mps
+param **.mobility.constraintAreaMinZ 0m
+param **.mobility.constraintAreaMaxZ 0m
+param **.mobility.constraintAreaMinX 0m
+param **.mobility.constraintAreaMinY 0m
+param **.mobility.constraintAreaMaxX 1200m
+param **.mobility.constraintAreaMaxY 600m
+param **.nodoMovil[*].mobility.changeInterval "normal(5s, 0.1s)"
+param **.nodoMovil[*].mobility.changeAngleBy "normal(0deg, 30deg)"
+param **.nodoFijo1.mobility.initialX 0m
+param **.nodoFijo1.mobility.initialY 300m
+param **.nodoFijo2.mobility.initialX 1200m
+param **.nodoFijo2.mobility.initialY 300m
+param **.dataLinkVisualizer.displayLinks true
+param **.nodoMovil*.wlan[*].radio.displayCommunicationRange true
+param **.networkRouteVisualizer.displayRoutes true
+
+vector 0 manets.nodoFijo1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 manets.nodoFijo2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 2 manets.nodoMovil[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 manets.nodoMovil[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 4 manets.nodoMovil[2].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 manets.nodoMovil[3].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 6 manets.nodoMovil[4].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 7 manets.nodoMovil[5].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 8 manets.nodoMovil[6].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 manets.nodoFijo1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 10 manets.nodoFijo1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 11 manets.nodoFijo2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 12 manets.nodoFijo2.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 13 manets.nodoMovil[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 14 manets.nodoMovil[0].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 15 manets.nodoMovil[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 16 manets.nodoMovil[1].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 17 manets.nodoMovil[2].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 18 manets.nodoMovil[2].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 19 manets.nodoMovil[3].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 20 manets.nodoMovil[3].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 21 manets.nodoMovil[4].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 22 manets.nodoMovil[4].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 23 manets.nodoMovil[5].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 24 manets.nodoMovil[5].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 25 manets.nodoMovil[6].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 26 manets.nodoMovil[6].wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 27 manets.nodoFijo1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 28 manets.nodoFijo1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 29 manets.nodoFijo1.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 30 manets.nodoFijo1.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 31 manets.nodoFijo1.wlan[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 32 manets.nodoFijo1.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 33 manets.nodoFijo1.wlan[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 34 manets.nodoFijo1.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 35 manets.nodoFijo1.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 36 manets.nodoMovil[3].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 37 manets.nodoMovil[3].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 38 manets.nodoMovil[5].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 39 manets.nodoMovil[5].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 40 manets.nodoMovil[2].wlan[0].mac rcvdPkFromLl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 41 manets.nodoMovil[2].wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 42 manets.nodoFijo1.ipv4.ip packetDropAddressResolutionFailed:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, vector(packetBytes)"
+vector 43 manets.nodoFijo1.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	0	0	0
+0	0	0	0
+0	0	0	4
+1	0	0	0
+1	0	0	0
+1	0	0	4
+2	0	0	0
+2	0	0	0
+2	0	0	4
+3	0	0	0
+3	0	0	0
+3	0	0	4
+4	0	0	0
+4	0	0	0
+4	0	0	4
+5	0	0	0
+5	0	0	0
+5	0	0	4
+6	0	0	0
+6	0	0	0
+6	0	0	4
+7	0	0	0
+7	0	0	0
+7	0	0	4
+8	0	0	0
+8	0	0	0
+8	0	0	4
+9	0	0	1
+10	0	0	1
+10	358	5	2
+10	367	5.00024	1
+10	466	6	2
+10	476	6.00024	1
+10	575	7	2
+10	585	7.00024	1
+10	685	8	2
+10	694	8.00024	1
+10	793	9	2
+10	803	9.00024	1
+10	902	10	2
+10	912	10.00024	1
+10	1014	11	2
+10	1023	11.00024	1
+10	1122	12	2
+10	1132	12.00024	1
+10	1231	13	2
+10	1241	13.00024	1
+10	1341	14	2
+10	1350	14.00024	1
+10	1452	15	2
+10	1462	15.00024	1
+10	1564	16	2
+10	1574	16.00024	1
+10	1674	17	2
+10	1683	17.00024	1
+10	1782	18	2
+10	1792	18.00024	1
+10	1891	19	2
+10	1901	19.00024	1
+10	2002	20	2
+11	0	0	1
+12	0	0	1
+13	0	0	1
+14	0	0	1
+15	0	0	1
+16	0	0	1
+17	0	0	1
+17	361	5.000001115484	3
+17	374	5.000241115484	1
+17	470	6.000001113832	3
+17	483	6.000241113832	1
+17	579	7.000001112187	3
+17	592	7.000241112187	1
+17	688	8.00000111055	3
+17	701	8.00024111055	1
+17	797	9.000001108921	3
+17	810	9.000241108921	1
+17	906	10.000001107299	3
+17	919	10.000241107299	1
+17	1017	11.000001105685	3
+17	1030	11.000241105685	1
+17	1126	12.000001104079	3
+17	1139	12.000241104079	1
+17	1235	13.00000110248	3
+17	1248	13.00024110248	1
+17	1344	14.00000110089	3
+17	1357	14.00024110089	1
+17	1456	15.000001099307	3
+17	1469	15.000241099307	1
+17	1568	16.000001097732	3
+17	1581	16.000241097732	1
+17	1677	17.000001096164	3
+17	1690	17.000241096164	1
+17	1786	18.000001094605	3
+17	1799	18.000241094605	1
+17	1895	19.000001093054	3
+17	1908	19.000241093054	1
+18	0	0	1
+19	0	0	1
+19	359	5.000000389503	3
+19	368	5.000240389503	1
+19	468	6.000000387889	3
+19	477	6.000240387889	1
+19	577	7.000000386296	3
+19	586	7.000240386296	1
+19	686	8.000000384726	3
+19	695	8.000240384726	1
+19	795	9.000000383178	3
+19	804	9.000240383178	1
+19	904	10.000000381654	3
+19	913	10.000240381654	1
+19	1015	11.000000380152	3
+19	1024	11.000240380152	1
+19	1124	12.000000378674	3
+19	1133	12.000240378674	1
+19	1233	13.000000377219	3
+19	1242	13.000240377219	1
+19	1342	14.000000375789	3
+19	1351	14.000240375789	1
+19	1454	15.000000374383	3
+19	1463	15.000240374383	1
+19	1566	16.000000373001	3
+19	1575	16.000240373001	1
+19	1675	17.000000371644	3
+19	1684	17.000240371644	1
+19	1784	18.000000370312	3
+19	1793	18.000240370312	1
+19	1893	19.000000369006	3
+19	1902	19.000240369006	1
+20	0	0	1
+21	0	0	1
+22	0	0	1
+23	0	0	1
+23	360	5.000000796281	3
+23	371	5.000240796281	1
+23	469	6.000000794683	3
+23	480	6.000240794683	1
+23	578	7.000000793096	3
+23	589	7.000240793096	1
+23	687	8.00000079152	3
+23	698	8.00024079152	1
+23	796	9.000000789955	3
+23	807	9.000240789955	1
+23	905	10.000000788401	3
+23	916	10.000240788401	1
+23	1016	11.000000786857	3
+23	1027	11.000240786857	1
+23	1125	12.000000785326	3
+23	1136	12.000240785326	1
+23	1234	13.000000783805	3
+23	1245	13.000240783805	1
+23	1343	14.000000782295	3
+23	1354	14.000240782295	1
+23	1455	15.000000780797	3
+23	1466	15.000240780797	1
+23	1567	16.00000077931	3
+23	1578	16.00024077931	1
+23	1676	17.000000777835	3
+23	1687	17.000240777835	1
+23	1785	18.000000776371	3
+23	1796	18.000240776371	1
+23	1894	19.000000774919	3
+23	1905	19.000240774919	1
+24	0	0	1
+25	0	0	1
+26	0	0	1
+27	349	5	50
+27	399	5.25	50
+27	421	5.5	50
+27	440	5.75	50
+27	463	6	50
+27	508	6.25	50
+27	530	6.5	50
+27	549	6.75	50
+27	572	7	50
+27	617	7.25	50
+27	639	7.5	50
+27	658	7.75	50
+27	681	8	50
+27	726	8.25	50
+27	748	8.5	50
+27	767	8.75	50
+27	790	9	50
+27	835	9.25	50
+27	857	9.5	50
+27	876	9.75	50
+27	899	10	50
+27	949	10.25	50
+27	968	10.5	50
+27	990	10.75	50
+27	1010	11	50
+27	1058	11.25	50
+27	1077	11.5	50
+27	1099	11.75	50
+27	1119	12	50
+27	1167	12.25	50
+27	1186	12.5	50
+27	1208	12.75	50
+27	1228	13	50
+27	1276	13.25	50
+27	1295	13.5	50
+27	1317	13.75	50
+27	1337	14	50
+27	1385	14.25	50
+27	1404	14.5	50
+27	1426	14.75	50
+27	1449	15	50
+27	1498	15.25	50
+27	1519	15.5	50
+27	1539	15.75	50
+27	1561	16	50
+27	1607	16.25	50
+27	1628	16.5	50
+27	1648	16.75	50
+27	1670	17	50
+27	1716	17.25	50
+27	1737	17.5	50
+27	1757	17.75	50
+27	1779	18	50
+27	1825	18.25	50
+27	1846	18.5	50
+27	1866	18.75	50
+27	1888	19	50
+27	1934	19.25	50
+27	1955	19.5	50
+27	1975	19.75	50
+27	1998	20	50
+28	355	5	58
+28	400	5.25	58
+28	422	5.5	58
+28	441	5.75	58
+28	465	6	58
+28	509	6.25	58
+28	531	6.5	58
+28	550	6.75	58
+28	574	7	58
+28	618	7.25	58
+28	640	7.5	58
+28	659	7.75	58
+28	682	8	58
+28	727	8.25	58
+28	749	8.5	58
+28	768	8.75	58
+28	792	9	58
+28	836	9.25	58
+28	858	9.5	58
+28	877	9.75	58
+28	901	10	58
+28	950	10.25	58
+28	969	10.5	58
+28	991	10.75	58
+28	1011	11	58
+28	1059	11.25	58
+28	1078	11.5	58
+28	1100	11.75	58
+28	1121	12	58
+28	1168	12.25	58
+28	1187	12.5	58
+28	1209	12.75	58
+28	1230	13	58
+28	1277	13.25	58
+28	1296	13.5	58
+28	1318	13.75	58
+28	1338	14	58
+28	1386	14.25	58
+28	1405	14.5	58
+28	1427	14.75	58
+28	1451	15	58
+28	1499	15.25	58
+28	1520	15.5	58
+28	1540	15.75	58
+28	1563	16	58
+28	1608	16.25	58
+28	1629	16.5	58
+28	1649	16.75	58
+28	1671	17	58
+28	1717	17.25	58
+28	1738	17.5	58
+28	1758	17.75	58
+28	1781	18	58
+28	1826	18.25	58
+28	1847	18.5	58
+28	1867	18.75	58
+28	1890	19	58
+28	1935	19.25	58
+28	1956	19.5	58
+28	1976	19.75	58
+28	1999	20	58
+29	356	5	28
+29	462	6	28
+29	571	7	28
+29	683	8	28
+29	789	9	28
+29	898	10	28
+29	1012	11	28
+29	1118	12	28
+29	1227	13	28
+29	1339	14	28
+29	1448	15	28
+29	1560	16	28
+29	1672	17	28
+29	1778	18	28
+29	1887	19	28
+29	2000	20	28
+30	357	5	28
+30	464	6	28
+30	573	7	28
+30	684	8	28
+30	791	9	28
+30	900	10	28
+30	1013	11	28
+30	1120	12	28
+30	1229	13	28
+30	1340	14	28
+30	1450	15	28
+30	1562	16	28
+30	1673	17	28
+30	1780	18	28
+30	1889	19	28
+30	2001	20	28
+31	357	5	28
+31	464	6	28
+31	573	7	28
+31	684	8	28
+31	791	9	28
+31	900	10	28
+31	1013	11	28
+31	1120	12	28
+31	1229	13	28
+31	1340	14	28
+31	1450	15	28
+31	1562	16	28
+31	1673	17	28
+31	1780	18	28
+31	1889	19	28
+31	2001	20	28
+32	357	5	1
+32	357	5	0
+32	464	6	1
+32	464	6	0
+32	573	7	1
+32	573	7	0
+32	684	8	1
+32	684	8	0
+32	791	9	1
+32	791	9	0
+32	900	10	1
+32	900	10	0
+32	1013	11	1
+32	1013	11	0
+32	1120	12	1
+32	1120	12	0
+32	1229	13	1
+32	1229	13	0
+32	1340	14	1
+32	1340	14	0
+32	1450	15	1
+32	1450	15	0
+32	1562	16	1
+32	1562	16	0
+32	1673	17	1
+32	1673	17	0
+32	1780	18	1
+32	1780	18	0
+32	1889	19	1
+32	1889	19	0
+32	2001	20	1
+32	2001	20	0
+33	357	5	28
+33	464	6	28
+33	573	7	28
+33	684	8	28
+33	791	9	28
+33	900	10	28
+33	1013	11	28
+33	1120	12	28
+33	1229	13	28
+33	1340	14	28
+33	1450	15	28
+33	1562	16	28
+33	1673	17	28
+33	1780	18	28
+33	1889	19	28
+33	2001	20	28
+34	357	5	0
+34	464	6	0
+34	573	7	0
+34	684	8	0
+34	791	9	0
+34	900	10	0
+34	1013	11	0
+34	1120	12	0
+34	1229	13	0
+34	1340	14	0
+34	1450	15	0
+34	1562	16	0
+34	1673	17	0
+34	1780	18	0
+34	1889	19	0
+34	2001	20	0
+35	357	5	48
+35	464	6	48
+35	573	7	48
+35	684	8	48
+35	791	9	48
+35	900	10	48
+35	1013	11	48
+35	1120	12	48
+35	1229	13	48
+35	1340	14	48
+35	1450	15	48
+35	1562	16	48
+35	1673	17	48
+35	1780	18	48
+35	1889	19	48
+35	2001	20	48
+36	369	5.000240389503	48
+36	478	6.000240387889	48
+36	587	7.000240386296	48
+36	696	8.000240384726	48
+36	805	9.000240383178	48
+36	914	10.000240381654	48
+36	1025	11.000240380152	48
+36	1134	12.000240378674	48
+36	1243	13.000240377219	48
+36	1352	14.000240375789	48
+36	1464	15.000240374383	48
+36	1576	16.000240373001	48
+36	1685	17.000240371644	48
+36	1794	18.000240370312	48
+36	1903	19.000240369006	48
+37	369	5.000240389503	28
+37	478	6.000240387889	28
+37	587	7.000240386296	28
+37	696	8.000240384726	28
+37	805	9.000240383178	28
+37	914	10.000240381654	28
+37	1025	11.000240380152	28
+37	1134	12.000240378674	28
+37	1243	13.000240377219	28
+37	1352	14.000240375789	28
+37	1464	15.000240374383	28
+37	1576	16.000240373001	28
+37	1685	17.000240371644	28
+37	1794	18.000240370312	28
+37	1903	19.000240369006	28
+38	372	5.000240796281	48
+38	481	6.000240794683	48
+38	590	7.000240793096	48
+38	699	8.00024079152	48
+38	808	9.000240789955	48
+38	917	10.000240788401	48
+38	1028	11.000240786857	48
+38	1137	12.000240785326	48
+38	1246	13.000240783805	48
+38	1355	14.000240782295	48
+38	1467	15.000240780797	48
+38	1579	16.00024077931	48
+38	1688	17.000240777835	48
+38	1797	18.000240776371	48
+38	1906	19.000240774919	48
+39	372	5.000240796281	28
+39	481	6.000240794683	28
+39	590	7.000240793096	28
+39	699	8.00024079152	28
+39	808	9.000240789955	28
+39	917	10.000240788401	28
+39	1028	11.000240786857	28
+39	1137	12.000240785326	28
+39	1246	13.000240783805	28
+39	1355	14.000240782295	28
+39	1467	15.000240780797	28
+39	1579	16.00024077931	28
+39	1688	17.000240777835	28
+39	1797	18.000240776371	28
+39	1906	19.000240774919	28
+40	375	5.000241115484	48
+40	484	6.000241113832	48
+40	593	7.000241112187	48
+40	702	8.00024111055	48
+40	811	9.000241108921	48
+40	920	10.000241107299	48
+40	1031	11.000241105685	48
+40	1140	12.000241104079	48
+40	1249	13.00024110248	48
+40	1358	14.00024110089	48
+40	1470	15.000241099307	48
+40	1582	16.000241097732	48
+40	1691	17.000241096164	48
+40	1800	18.000241094605	48
+40	1909	19.000241093054	48
+41	375	5.000241115484	28
+41	484	6.000241113832	28
+41	593	7.000241112187	28
+41	702	8.00024111055	28
+41	811	9.000241108921	28
+41	920	10.000241107299	28
+41	1031	11.000241105685	28
+41	1140	12.000241104079	28
+41	1249	13.00024110248	28
+41	1358	14.00024110089	28
+41	1470	15.000241099307	28
+41	1582	16.000241097732	28
+41	1691	17.000241096164	28
+41	1800	18.000241094605	28
+41	1909	19.000241093054	28
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	680	8	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1009	11	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1336	14	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1669	17	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+42	1997	20	78
+43	2003	0.1	0
+43	2003	0.2	0
+43	2003	0.3	0
+43	2003	0.4	0
+43	2003	0.5	0
+43	2003	0.6	0
+43	2003	0.7	0
+43	2003	0.8	0
+43	2003	0.9	0
+43	2003	1	0
+43	2003	1.1	0
+43	2003	1.2	0
+43	2003	1.3	0
+43	2003	1.4	0
+43	2003	1.5	0
+43	2003	1.6	0
+43	2003	1.7	0
+43	2003	1.8	0
+43	2003	1.9	0
+43	2003	2	0
+43	2003	2.1	0
+43	2003	2.2	0
+43	2003	2.3	0
+43	2003	2.4	0
+43	2003	2.5	0
+43	2003	2.6	0
+43	2003	2.7	0
+43	2003	2.8	0
+43	2003	2.9	0
+43	2003	3	0
+43	2003	3.1	0
+43	2003	3.2	0
+43	2003	3.3	0
+43	2003	3.4	0
+43	2003	3.5	0
+43	2003	3.6	0
+43	2003	3.7	0
+43	2003	3.8	0
+43	2003	3.9	0
+43	2003	4	0
+43	2003	4.1	0
+43	2003	4.2	0
+43	2003	4.3	0
+43	2003	4.4	0
+43	2003	4.5	0
+43	2003	4.6	0
+43	2003	4.7	0
+43	2003	4.8	0
+43	2003	4.9	0
+43	2003	5	0
+43	2003	5.1	0
+43	2003	5.2	0
+43	2003	5.3	0
+43	2003	5.4	0
+43	2003	5.5	0
+43	2003	5.6	0
+43	2003	5.7	0
+43	2003	5.8	0
+43	2003	5.9	0
+43	2003	6	0
+43	2003	6.1	0
+43	2003	6.2	0
+43	2003	6.3	0
+43	2003	6.4	0
+43	2003	6.5	0
+43	2003	6.6	0
+43	2003	6.7	0
+43	2003	6.8	0
+43	2003	6.9	0
+43	2003	7	0
+43	2003	7.1	0
+43	2003	7.2	0
+43	2003	7.3	0
+43	2003	7.4	0
+43	2003	7.5	0
+43	2003	7.6	0
+43	2003	7.7	0
+43	2003	7.8	0
+43	2003	7.9	0
+43	2003	8	0
+43	2003	8.1	0
+43	2003	8.2	0
+43	2003	8.3	0
+43	2003	8.4	0
+43	2003	8.5	0
+43	2003	8.6	0
+43	2003	8.7	0
+43	2003	8.8	0
+43	2003	8.9	0
+43	2003	9	0
+43	2003	9.1	0
+43	2003	9.2	0
+43	2003	9.3	0
+43	2003	9.4	0
+43	2003	9.5	0
+43	2003	9.6	0
+43	2003	9.7	0
+43	2003	9.8	0
+43	2003	9.9	0
+43	2003	10	0
+43	2003	10.1	0
+43	2003	10.2	0
+43	2003	10.3	0
+43	2003	10.4	0
+43	2003	10.5	0
+43	2003	10.6	0
+43	2003	10.7	0
+43	2003	10.8	0
+43	2003	10.9	0
+43	2003	11	0
+43	2003	11.1	0
+43	2003	11.2	0
+43	2003	11.3	0
+43	2003	11.4	0
+43	2003	11.5	0
+43	2003	11.6	0
+43	2003	11.7	0
+43	2003	11.8	0
+43	2003	11.9	0
+43	2003	12	0
+43	2003	12.1	0
+43	2003	12.2	0
+43	2003	12.3	0
+43	2003	12.4	0
+43	2003	12.5	0
+43	2003	12.6	0
+43	2003	12.7	0
+43	2003	12.8	0
+43	2003	12.9	0
+43	2003	13	0
+43	2003	13.1	0
+43	2003	13.2	0
+43	2003	13.3	0
+43	2003	13.4	0
+43	2003	13.5	0
+43	2003	13.6	0
+43	2003	13.7	0
+43	2003	13.8	0
+43	2003	13.9	0
+43	2003	14	0
+43	2003	14.1	0
+43	2003	14.2	0
+43	2003	14.3	0
+43	2003	14.4	0
+43	2003	14.5	0
+43	2003	14.6	0
+43	2003	14.7	0
+43	2003	14.8	0
+43	2003	14.9	0
+43	2003	15	0
+43	2003	15.1	0
+43	2003	15.2	0
+43	2003	15.3	0
+43	2003	15.4	0
+43	2003	15.5	0
+43	2003	15.6	0
+43	2003	15.7	0
+43	2003	15.8	0
+43	2003	15.9	0
+43	2003	16	0
+43	2003	16.1	0
+43	2003	16.2	0
+43	2003	16.3	0
+43	2003	16.4	0
+43	2003	16.5	0
+43	2003	16.6	0
+43	2003	16.7	0
+43	2003	16.8	0
+43	2003	16.9	0
+43	2003	17	0
+43	2003	17.1	0
+43	2003	17.2	0
+43	2003	17.3	0
+43	2003	17.4	0
+43	2003	17.5	0
+43	2003	17.6	0
+43	2003	17.7	0
+43	2003	17.8	0
+43	2003	17.9	0
+43	2003	18	0
+43	2003	18.1	0
+43	2003	18.2	0
+43	2003	18.3	0
+43	2003	18.4	0
+43	2003	18.5	0
+43	2003	18.6	0
+43	2003	18.7	0
+43	2003	18.8	0
+43	2003	18.9	0
+43	2003	19	0
+43	2003	19.1	0
+43	2003	19.2	0
+43	2003	19.3	0
+43	2003	19.4	0
+43	2003	19.5	0
+43	2003	19.6	0
+43	2003	19.7	0
+43	2003	19.8	0
+43	2003	19.9	0
+43	2003	20	0
+
