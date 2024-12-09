@@ -1,3 +1,0 @@
-package ethnet;
-
-@license(LGPL);
