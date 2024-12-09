@@ -1,0 +1,3165 @@
+version 2
+run General-0-20241209-13:26:22-17892
+attr configname General
+attr datetime 20241209-13:26:22
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network EthNet
+attr processid 17892
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.numHosts 2
+param **.client[*].numApps 1
+param **.client[*].app[0].typename "\"TcpSessionApp\""
+param **.client[*].app[0].connectAddress "\"server\""
+param **.client[*].app[0].connectPort 1000
+param **.client[*].app[0].sendBytes 1MB
+param **.server.numApps 1
+param **.server.app[0].typename "\"TcpEchoApp\""
+param **.server.app[0].localPort 1000
+
+scalar EthNet.server.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EthNet.server.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EthNet.server.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.server.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac.queue packetPopped:count 3736
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.server.eth[0].mac.queue packetPopped:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.server.eth[0].mac.queue queueingTime:histogram
+field count 3736
+field mean 0.00031309774625267
+field stddev 0.00017261565472311
+field min 0
+field max 0.0006056
+field sum 1.16973318
+field sqrsum 0.0004775294958692
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	1e-05	1
+bin	2e-05	1
+bin	3e-05	0
+bin	4e-05	267
+bin	5e-05	1
+bin	6e-05	1
+bin	7e-05	0
+bin	8e-05	262
+bin	9e-05	4
+bin	0.0001	0
+bin	0.00011	1
+bin	0.00012	262
+bin	0.00013	0
+bin	0.00014	4
+bin	0.00015	1
+bin	0.00016	262
+bin	0.00017	0
+bin	0.00018	2
+bin	0.00019	1
+bin	0.0002	262
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	3
+bin	0.00024	0
+bin	0.00025	262
+bin	0.00026	0
+bin	0.00027	2
+bin	0.00028	1
+bin	0.00029	262
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	3
+bin	0.00033	262
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	1
+bin	0.00037	262
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	1
+bin	0.00042	262
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	1
+bin	0.00046	262
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	263
+bin	0.00051	0
+bin	0.00052	2
+bin	0.00053	0
+bin	0.00054	264
+bin	0.00055	0
+bin	0.00056	1
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	264
+bin	0.0006	1
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+scalar EthNet.server.eth[0].mac.queue queueLength:max 15
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.server.eth[0].mac.queue queueLength:timeavg 0.12997043723646
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.server.eth[0].mac.queue packetPushed:count 3736
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.server.eth[0].mac.queue packetPushed:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.server.eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.server.eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac "simulated time" 10
+scalar EthNet.server.eth[0].mac full-duplex 1
+scalar EthNet.server.eth[0].mac "frames/sec sent" 373.6
+scalar EthNet.server.eth[0].mac "frames/sec rcvd" 373.7
+scalar EthNet.server.eth[0].mac "bits/sec sent" 982326.4
+scalar EthNet.server.eth[0].mac "bits/sec rcvd" 982377.6
+scalar EthNet.server.eth[0].mac "rx channel idle (%)" 100
+scalar EthNet.server.eth[0].mac "rx channel utilization (%)" 0
+scalar EthNet.server.eth[0].mac txPk:count 3736
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.server.eth[0].mac txPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac packetReceivedFromUpper:count 3736
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.server.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 1216680
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac passedUpPk:count 3737
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.server.eth[0].mac passedUpPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.server.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.server.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.server.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.server.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.server.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.server.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.server.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.server.eth[0].mac rxPkOk:count 3737
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.server.eth[0].mac rxPkOk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.server.eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.server.eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.server.eth[0].encap decapPk:count 3737
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.server.eth[0].encap decapPk:sum(packetBytes) 1160706
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[0].encap encapPk:count 3736
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.server.eth[0].encap encapPk:sum(packetBytes) 1149432
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac.queue packetPopped:count 3736
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.server.eth[1].mac.queue packetPopped:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.server.eth[1].mac.queue queueingTime:histogram
+field count 3736
+field mean 0.00031309774625267
+field stddev 0.00017261565472311
+field min 0
+field max 0.0006056
+field sum 1.16973318
+field sqrsum 0.0004775294958692
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	1e-05	1
+bin	2e-05	1
+bin	3e-05	0
+bin	4e-05	267
+bin	5e-05	1
+bin	6e-05	1
+bin	7e-05	0
+bin	8e-05	262
+bin	9e-05	4
+bin	0.0001	0
+bin	0.00011	1
+bin	0.00012	262
+bin	0.00013	0
+bin	0.00014	4
+bin	0.00015	1
+bin	0.00016	262
+bin	0.00017	0
+bin	0.00018	2
+bin	0.00019	1
+bin	0.0002	262
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	3
+bin	0.00024	0
+bin	0.00025	262
+bin	0.00026	0
+bin	0.00027	2
+bin	0.00028	1
+bin	0.00029	262
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	3
+bin	0.00033	262
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	1
+bin	0.00037	262
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	1
+bin	0.00042	262
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	1
+bin	0.00046	262
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	263
+bin	0.00051	0
+bin	0.00052	2
+bin	0.00053	0
+bin	0.00054	264
+bin	0.00055	0
+bin	0.00056	1
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	264
+bin	0.0006	1
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+scalar EthNet.server.eth[1].mac.queue queueLength:max 15
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.server.eth[1].mac.queue queueLength:timeavg 0.12997043723646
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.server.eth[1].mac.queue packetPushed:count 3736
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.server.eth[1].mac.queue packetPushed:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.server.eth[1].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.server.eth[1].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac "simulated time" 10
+scalar EthNet.server.eth[1].mac full-duplex 1
+scalar EthNet.server.eth[1].mac "frames/sec sent" 373.6
+scalar EthNet.server.eth[1].mac "frames/sec rcvd" 373.7
+scalar EthNet.server.eth[1].mac "bits/sec sent" 982326.4
+scalar EthNet.server.eth[1].mac "bits/sec rcvd" 982377.6
+scalar EthNet.server.eth[1].mac "rx channel idle (%)" 100
+scalar EthNet.server.eth[1].mac "rx channel utilization (%)" 0
+scalar EthNet.server.eth[1].mac txPk:count 3736
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.server.eth[1].mac txPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac packetReceivedFromUpper:count 3736
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.server.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 1216680
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac passedUpPk:count 3737
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.server.eth[1].mac passedUpPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.server.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.server.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.server.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.server.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.server.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.server.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.server.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.server.eth[1].mac rxPkOk:count 3737
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.server.eth[1].mac rxPkOk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.server.eth[1].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.server.eth[1].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.server.eth[1].encap decapPk:count 3737
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.server.eth[1].encap decapPk:sum(packetBytes) 1160706
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[1].encap encapPk:count 3736
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.server.eth[1].encap encapPk:sum(packetBytes) 1149432
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac.queue packetPopped:count 3736
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.server.eth[2].mac.queue packetPopped:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.server.eth[2].mac.queue queueingTime:histogram
+field count 3736
+field mean 0.00031309774625267
+field stddev 0.00017261565472311
+field min 0
+field max 0.0006056
+field sum 1.16973318
+field sqrsum 0.0004775294958692
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	1e-05	1
+bin	2e-05	1
+bin	3e-05	0
+bin	4e-05	267
+bin	5e-05	1
+bin	6e-05	1
+bin	7e-05	0
+bin	8e-05	262
+bin	9e-05	4
+bin	0.0001	0
+bin	0.00011	1
+bin	0.00012	262
+bin	0.00013	0
+bin	0.00014	4
+bin	0.00015	1
+bin	0.00016	262
+bin	0.00017	0
+bin	0.00018	2
+bin	0.00019	1
+bin	0.0002	262
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	3
+bin	0.00024	0
+bin	0.00025	262
+bin	0.00026	0
+bin	0.00027	2
+bin	0.00028	1
+bin	0.00029	262
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	3
+bin	0.00033	262
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	1
+bin	0.00037	262
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	1
+bin	0.00042	262
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	1
+bin	0.00046	262
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	263
+bin	0.00051	0
+bin	0.00052	2
+bin	0.00053	0
+bin	0.00054	264
+bin	0.00055	0
+bin	0.00056	1
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	264
+bin	0.0006	1
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+scalar EthNet.server.eth[2].mac.queue queueLength:max 15
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.server.eth[2].mac.queue queueLength:timeavg 0.12997043723646
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.server.eth[2].mac.queue packetPushed:count 3736
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.server.eth[2].mac.queue packetPushed:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.server.eth[2].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.server.eth[2].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac "simulated time" 10
+scalar EthNet.server.eth[2].mac full-duplex 1
+scalar EthNet.server.eth[2].mac "frames/sec sent" 373.6
+scalar EthNet.server.eth[2].mac "frames/sec rcvd" 373.7
+scalar EthNet.server.eth[2].mac "bits/sec sent" 982326.4
+scalar EthNet.server.eth[2].mac "bits/sec rcvd" 982377.6
+scalar EthNet.server.eth[2].mac "rx channel idle (%)" 100
+scalar EthNet.server.eth[2].mac "rx channel utilization (%)" 0
+scalar EthNet.server.eth[2].mac txPk:count 3736
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.server.eth[2].mac txPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac packetReceivedFromUpper:count 3736
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.server.eth[2].mac packetReceivedFromUpper:sum(packetBytes) 1216680
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac passedUpPk:count 3737
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.server.eth[2].mac passedUpPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.server.eth[2].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.server.eth[2].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.server.eth[2].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.server.eth[2].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.server.eth[2].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.server.eth[2].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.server.eth[2].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.server.eth[2].mac rxPkOk:count 3737
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.server.eth[2].mac rxPkOk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.server.eth[2].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.server.eth[2].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.server.eth[2].encap decapPk:count 3737
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.server.eth[2].encap decapPk:sum(packetBytes) 1160706
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[2].encap encapPk:count 3736
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.server.eth[2].encap encapPk:sum(packetBytes) 1149432
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac.queue packetPopped:count 3736
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.server.eth[3].mac.queue packetPopped:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.server.eth[3].mac.queue queueingTime:histogram
+field count 3736
+field mean 0.00031309774625267
+field stddev 0.00017261565472311
+field min 0
+field max 0.0006056
+field sum 1.16973318
+field sqrsum 0.0004775294958692
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	1e-05	1
+bin	2e-05	1
+bin	3e-05	0
+bin	4e-05	267
+bin	5e-05	1
+bin	6e-05	1
+bin	7e-05	0
+bin	8e-05	262
+bin	9e-05	4
+bin	0.0001	0
+bin	0.00011	1
+bin	0.00012	262
+bin	0.00013	0
+bin	0.00014	4
+bin	0.00015	1
+bin	0.00016	262
+bin	0.00017	0
+bin	0.00018	2
+bin	0.00019	1
+bin	0.0002	262
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	3
+bin	0.00024	0
+bin	0.00025	262
+bin	0.00026	0
+bin	0.00027	2
+bin	0.00028	1
+bin	0.00029	262
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	3
+bin	0.00033	262
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	1
+bin	0.00037	262
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	1
+bin	0.00042	262
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	1
+bin	0.00046	262
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	263
+bin	0.00051	0
+bin	0.00052	2
+bin	0.00053	0
+bin	0.00054	264
+bin	0.00055	0
+bin	0.00056	1
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	264
+bin	0.0006	1
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+scalar EthNet.server.eth[3].mac.queue queueLength:max 15
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.server.eth[3].mac.queue queueLength:timeavg 0.12997043723646
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.server.eth[3].mac.queue packetPushed:count 3736
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.server.eth[3].mac.queue packetPushed:sum(packetBytes) 1227908
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.server.eth[3].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.server.eth[3].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac "simulated time" 10
+scalar EthNet.server.eth[3].mac full-duplex 1
+scalar EthNet.server.eth[3].mac "frames/sec sent" 373.6
+scalar EthNet.server.eth[3].mac "frames/sec rcvd" 373.7
+scalar EthNet.server.eth[3].mac "bits/sec sent" 982326.4
+scalar EthNet.server.eth[3].mac "bits/sec rcvd" 982377.6
+scalar EthNet.server.eth[3].mac "rx channel idle (%)" 100
+scalar EthNet.server.eth[3].mac "rx channel utilization (%)" 0
+scalar EthNet.server.eth[3].mac txPk:count 3736
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.server.eth[3].mac txPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac packetReceivedFromUpper:count 3736
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.server.eth[3].mac packetReceivedFromUpper:sum(packetBytes) 1216680
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac passedUpPk:count 3737
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.server.eth[3].mac passedUpPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.server.eth[3].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.server.eth[3].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.server.eth[3].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.server.eth[3].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.server.eth[3].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.server.eth[3].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.server.eth[3].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.server.eth[3].mac rxPkOk:count 3737
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.server.eth[3].mac rxPkOk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.server.eth[3].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.server.eth[3].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.server.eth[3].encap decapPk:count 3737
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.server.eth[3].encap decapPk:sum(packetBytes) 1160706
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.server.eth[3].encap encapPk:count 3736
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.server.eth[3].encap encapPk:sum(packetBytes) 1149432
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.server.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EthNet.server.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EthNet.server.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EthNet.server.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EthNet.server.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EthNet.server.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EthNet.server.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EthNet.server.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EthNet.server.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EthNet.server.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EthNet.server.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EthNet.server.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar EthNet.server.ipv4.arp arpReplySent:count 4
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EthNet.server.ipv4.arp arpReplySent:sum(packetBytes) 112
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EthNet.server.ipv4.arp arpRequestSent:count 0
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EthNet.server.ipv4.arp arpRequestSent:sum(packetBytes) 0
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar EthNet.server.ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar EthNet.server.ipv4.arp arpResolutionCompleted:count 4
+attr title "ARP completed resolutions, count"
+scalar EthNet.server.ipv4.arp arpResolutionInitiated:count 0
+attr title "ARP initiated resolutions, count"
+scalar EthNet.server.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.server.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EthNet.server.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.server.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.server.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EthNet.server.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EthNet.server.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar EthNet.server.app[0] bytesRcvd 4000000
+scalar EthNet.server.app[0] bytesSent 4000000
+scalar EthNet.server.app[0] packetReceived:count 7464
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.server.app[0] packetReceived:sum(packetBytes) 4000000
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic EthNet.server.app[0] endToEndDelay:histogram
+field count 7464
+field mean 0.051994051854233
+field stddev 0.030079188679191
+field min 5.493e-05
+field max 0.10407983
+field sum 388.08360304
+field sqrsum 26.930244886338
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	120
+bin	0.0016	116
+bin	0.0032	112
+bin	0.0048	116
+bin	0.0064	116
+bin	0.008	116
+bin	0.0096	112
+bin	0.0112	116
+bin	0.0128	116
+bin	0.0144	112
+bin	0.016	116
+bin	0.0176	116
+bin	0.0192	116
+bin	0.0208	112
+bin	0.0224	116
+bin	0.024	116
+bin	0.0256	116
+bin	0.0272	112
+bin	0.0288	116
+bin	0.0304	112
+bin	0.032	112
+bin	0.0336	112
+bin	0.0352	116
+bin	0.0368	116
+bin	0.0384	116
+bin	0.04	112
+bin	0.0416	116
+bin	0.0432	116
+bin	0.0448	116
+bin	0.0464	112
+bin	0.048	116
+bin	0.0496	116
+bin	0.0512	116
+bin	0.0528	112
+bin	0.0544	116
+bin	0.056	116
+bin	0.0576	116
+bin	0.0592	112
+bin	0.0608	116
+bin	0.0624	116
+bin	0.064	112
+bin	0.0656	112
+bin	0.0672	112
+bin	0.0688	116
+bin	0.0704	116
+bin	0.072	112
+bin	0.0736	116
+bin	0.0752	116
+bin	0.0768	116
+bin	0.0784	112
+bin	0.08	116
+bin	0.0816	116
+bin	0.0832	116
+bin	0.0848	112
+bin	0.0864	116
+bin	0.088	116
+bin	0.0896	116
+bin	0.0912	112
+bin	0.0928	116
+bin	0.0944	116
+bin	0.096	116
+bin	0.0976	112
+bin	0.0992	112
+bin	0.1008	112
+bin	0.1024	116
+bin	0.104	8
+bin	0.1056	0
+statistic EthNet.server.app[0] endToEndDelay:weightedHistogram
+field count 7464
+field mean 0.05198488475728
+field stddev 0.030073895865543
+field min 5.493e-05
+field max 0.10407983
+field weights 32000000
+field weightedSum 1663516.312233
+field sqrSumWeights 137199779840
+field weightedSqrSum 115415.88080739
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	514560
+bin	0.0016	497408
+bin	0.0032	480256
+bin	0.0048	497408
+bin	0.0064	497408
+bin	0.008	497408
+bin	0.0096	480256
+bin	0.0112	497408
+bin	0.0128	497408
+bin	0.0144	480256
+bin	0.016	497408
+bin	0.0176	497408
+bin	0.0192	497408
+bin	0.0208	480256
+bin	0.0224	497408
+bin	0.024	497408
+bin	0.0256	497408
+bin	0.0272	480256
+bin	0.0288	497408
+bin	0.0304	480256
+bin	0.032	480256
+bin	0.0336	480256
+bin	0.0352	497408
+bin	0.0368	497408
+bin	0.0384	497408
+bin	0.04	480256
+bin	0.0416	497408
+bin	0.0432	497408
+bin	0.0448	497408
+bin	0.0464	480256
+bin	0.048	497408
+bin	0.0496	497408
+bin	0.0512	497408
+bin	0.0528	480256
+bin	0.0544	497408
+bin	0.056	497408
+bin	0.0576	497408
+bin	0.0592	480256
+bin	0.0608	497408
+bin	0.0624	497408
+bin	0.064	480256
+bin	0.0656	480256
+bin	0.0672	480256
+bin	0.0688	497408
+bin	0.0704	497408
+bin	0.072	480256
+bin	0.0736	497408
+bin	0.0752	497408
+bin	0.0768	497408
+bin	0.0784	480256
+bin	0.08	497408
+bin	0.0816	497408
+bin	0.0832	497408
+bin	0.0848	480256
+bin	0.0864	497408
+bin	0.088	497408
+bin	0.0896	497408
+bin	0.0912	480256
+bin	0.0928	497408
+bin	0.0944	497408
+bin	0.096	497408
+bin	0.0976	480256
+bin	0.0992	480256
+bin	0.1008	480256
+bin	0.1024	497408
+bin	0.104	28672
+bin	0.1056	0
+scalar EthNet.server.app[0] packetSent:count 7464
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.server.app[0] packetSent:sum(packetBytes) 4000000
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[0].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EthNet.client[0].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EthNet.client[0].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[0].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac.queue packetPopped:count 3737
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.client[0].eth[0].mac.queue packetPopped:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.client[0].eth[0].mac.queue queueingTime:histogram
+field count 3737
+field mean 0.00040904992774952
+field stddev 0.00017396987490587
+field min 0
+field max 0.00068742
+field sum 1.52861958
+field sqrsum 0.00073835370166761
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	21
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	4
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	2
+bin	0.0001	3
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	263
+bin	0.00014	2
+bin	0.00015	1
+bin	0.00016	0
+bin	0.00017	262
+bin	0.00018	0
+bin	0.00019	1
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	264
+bin	0.00023	0
+bin	0.00024	1
+bin	0.00025	1
+bin	0.00026	262
+bin	0.00027	1
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	264
+bin	0.00031	1
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	261
+bin	0.00035	2
+bin	0.00036	3
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	261
+bin	0.0004	3
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	261
+bin	0.00044	2
+bin	0.00045	1
+bin	0.00046	0
+bin	0.00047	261
+bin	0.00048	0
+bin	0.00049	3
+bin	0.0005	0
+bin	0.00051	261
+bin	0.00052	0
+bin	0.00053	2
+bin	0.00054	1
+bin	0.00055	0
+bin	0.00056	262
+bin	0.00057	2
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	261
+bin	0.00061	4
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	261
+bin	0.00065	0
+bin	0.00066	5
+bin	0.00067	0
+bin	0.00068	267
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+bin	0.00086	0
+scalar EthNet.client[0].eth[0].mac.queue queueLength:max 21
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.client[0].eth[0].mac.queue queueLength:timeavg 0.16984662000001
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.client[0].eth[0].mac.queue packetPushed:count 3737
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.client[0].eth[0].mac.queue packetPushed:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.client[0].eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.client[0].eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac "simulated time" 10
+scalar EthNet.client[0].eth[0].mac full-duplex 1
+scalar EthNet.client[0].eth[0].mac "frames/sec sent" 373.7
+scalar EthNet.client[0].eth[0].mac "frames/sec rcvd" 373.6
+scalar EthNet.client[0].eth[0].mac "bits/sec sent" 982377.6
+scalar EthNet.client[0].eth[0].mac "bits/sec rcvd" 982326.4
+scalar EthNet.client[0].eth[0].mac "rx channel idle (%)" 100
+scalar EthNet.client[0].eth[0].mac "rx channel utilization (%)" 0
+scalar EthNet.client[0].eth[0].mac txPk:count 3737
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.client[0].eth[0].mac txPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac packetReceivedFromUpper:count 3737
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.client[0].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 1216738
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac passedUpPk:count 3736
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[0].eth[0].mac passedUpPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.client[0].eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.client[0].eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.client[0].eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.client[0].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.client[0].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.client[0].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.client[0].eth[0].mac rxPkOk:count 3736
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.client[0].eth[0].mac rxPkOk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.client[0].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.client[0].eth[0].encap decapPk:count 3736
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.client[0].eth[0].encap decapPk:sum(packetBytes) 1160660
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.client[0].eth[0].encap encapPk:count 3737
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.client[0].eth[0].encap encapPk:sum(packetBytes) 1149472
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EthNet.client[0].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EthNet.client[0].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EthNet.client[0].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EthNet.client[0].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EthNet.client[0].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EthNet.client[0].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EthNet.client[0].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EthNet.client[0].ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar EthNet.client[0].ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar EthNet.client[0].ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar EthNet.client[0].ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar EthNet.client[0].udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[0].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EthNet.client[0].udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[0].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[0].udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EthNet.client[0].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EthNet.client[0].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar EthNet.client[0].app[0] bytesRcvd 1000000
+scalar EthNet.client[0].app[0] bytesSent 1000000
+scalar EthNet.client[0].app[0] packetReceived:count 1866
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[0].app[0] packetReceived:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic EthNet.client[0].app[0] endToEndDelay:histogram
+field count 1866
+field mean 0.052723825927117
+field stddev 0.030091777593341
+field min 0.00010986
+field max 0.10473972
+field sum 98.38265918
+field sqrsum 6.8758958186793
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	0.002	35
+bin	0.004	37
+bin	0.006	35
+bin	0.008	37
+bin	0.01	35
+bin	0.012	35
+bin	0.014	36
+bin	0.016	35
+bin	0.018	37
+bin	0.02	35
+bin	0.022	37
+bin	0.024	35
+bin	0.026	37
+bin	0.028	35
+bin	0.03	35
+bin	0.032	37
+bin	0.034	35
+bin	0.036	37
+bin	0.038	35
+bin	0.04	37
+bin	0.042	35
+bin	0.044	36
+bin	0.046	35
+bin	0.048	35
+bin	0.05	37
+bin	0.052	35
+bin	0.054	37
+bin	0.056	35
+bin	0.058	37
+bin	0.06	35
+bin	0.062	36
+bin	0.064	36
+bin	0.066	35
+bin	0.068	37
+bin	0.07	35
+bin	0.072	37
+bin	0.074	34
+bin	0.076	37
+bin	0.078	35
+bin	0.08	36
+bin	0.082	36
+bin	0.084	35
+bin	0.086	37
+bin	0.088	35
+bin	0.09	37
+bin	0.092	35
+bin	0.094	37
+bin	0.096	35
+bin	0.098	35
+bin	0.1	37
+bin	0.102	35
+bin	0.104	15
+bin	0.106	0
+statistic EthNet.client[0].app[0] endToEndDelay:weightedHistogram
+field count 1866
+field mean 0.05271467112976
+field stddev 0.030086507661461
+field min 0.00010986
+field max 0.10473972
+field weights 8000000
+field weightedSum 421717.36903808
+field sqrSumWeights 34299944960
+field weightedSqrSum 29468.394934701
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	107200
+bin	0.002	150080
+bin	0.004	158656
+bin	0.006	150080
+bin	0.008	158656
+bin	0.01	150080
+bin	0.012	150080
+bin	0.014	154368
+bin	0.016	150080
+bin	0.018	158656
+bin	0.02	150080
+bin	0.022	158656
+bin	0.024	150080
+bin	0.026	158656
+bin	0.028	150080
+bin	0.03	150080
+bin	0.032	158656
+bin	0.034	150080
+bin	0.036	158656
+bin	0.038	150080
+bin	0.04	158656
+bin	0.042	150080
+bin	0.044	154368
+bin	0.046	150080
+bin	0.048	150080
+bin	0.05	158656
+bin	0.052	150080
+bin	0.054	158656
+bin	0.056	150080
+bin	0.058	158656
+bin	0.06	150080
+bin	0.062	154368
+bin	0.064	154368
+bin	0.066	150080
+bin	0.068	158656
+bin	0.07	150080
+bin	0.072	158656
+bin	0.074	145792
+bin	0.076	158656
+bin	0.078	150080
+bin	0.08	154368
+bin	0.082	154368
+bin	0.084	150080
+bin	0.086	158656
+bin	0.088	150080
+bin	0.09	158656
+bin	0.092	150080
+bin	0.094	158656
+bin	0.096	150080
+bin	0.098	150080
+bin	0.1	158656
+bin	0.102	150080
+bin	0.104	62912
+bin	0.106	0
+scalar EthNet.client[0].app[0] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[0].app[0] packetSent:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[1].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EthNet.client[1].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EthNet.client[1].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[1].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac.queue packetPopped:count 3737
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.client[1].eth[0].mac.queue packetPopped:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.client[1].eth[0].mac.queue queueingTime:histogram
+field count 3737
+field mean 0.00040904992774952
+field stddev 0.00017396987490587
+field min 0
+field max 0.00068742
+field sum 1.52861958
+field sqrsum 0.00073835370166761
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	21
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	4
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	2
+bin	0.0001	3
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	263
+bin	0.00014	2
+bin	0.00015	1
+bin	0.00016	0
+bin	0.00017	262
+bin	0.00018	0
+bin	0.00019	1
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	264
+bin	0.00023	0
+bin	0.00024	1
+bin	0.00025	1
+bin	0.00026	262
+bin	0.00027	1
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	264
+bin	0.00031	1
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	261
+bin	0.00035	2
+bin	0.00036	3
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	261
+bin	0.0004	3
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	261
+bin	0.00044	2
+bin	0.00045	1
+bin	0.00046	0
+bin	0.00047	261
+bin	0.00048	0
+bin	0.00049	3
+bin	0.0005	0
+bin	0.00051	261
+bin	0.00052	0
+bin	0.00053	2
+bin	0.00054	1
+bin	0.00055	0
+bin	0.00056	262
+bin	0.00057	2
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	261
+bin	0.00061	4
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	261
+bin	0.00065	0
+bin	0.00066	5
+bin	0.00067	0
+bin	0.00068	267
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+bin	0.00086	0
+scalar EthNet.client[1].eth[0].mac.queue queueLength:max 21
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.client[1].eth[0].mac.queue queueLength:timeavg 0.16984662000001
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.client[1].eth[0].mac.queue packetPushed:count 3737
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.client[1].eth[0].mac.queue packetPushed:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.client[1].eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.client[1].eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac "simulated time" 10
+scalar EthNet.client[1].eth[0].mac full-duplex 1
+scalar EthNet.client[1].eth[0].mac "frames/sec sent" 373.7
+scalar EthNet.client[1].eth[0].mac "frames/sec rcvd" 373.6
+scalar EthNet.client[1].eth[0].mac "bits/sec sent" 982377.6
+scalar EthNet.client[1].eth[0].mac "bits/sec rcvd" 982326.4
+scalar EthNet.client[1].eth[0].mac "rx channel idle (%)" 100
+scalar EthNet.client[1].eth[0].mac "rx channel utilization (%)" 0
+scalar EthNet.client[1].eth[0].mac txPk:count 3737
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.client[1].eth[0].mac txPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac packetReceivedFromUpper:count 3737
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.client[1].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 1216738
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac passedUpPk:count 3736
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[1].eth[0].mac passedUpPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.client[1].eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.client[1].eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.client[1].eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.client[1].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.client[1].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.client[1].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.client[1].eth[0].mac rxPkOk:count 3736
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.client[1].eth[0].mac rxPkOk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.client[1].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.client[1].eth[0].encap decapPk:count 3736
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.client[1].eth[0].encap decapPk:sum(packetBytes) 1160660
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.client[1].eth[0].encap encapPk:count 3737
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.client[1].eth[0].encap encapPk:sum(packetBytes) 1149472
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EthNet.client[1].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EthNet.client[1].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EthNet.client[1].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EthNet.client[1].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EthNet.client[1].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EthNet.client[1].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EthNet.client[1].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EthNet.client[1].ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar EthNet.client[1].ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar EthNet.client[1].ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar EthNet.client[1].ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar EthNet.client[1].udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[1].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EthNet.client[1].udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[1].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[1].udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EthNet.client[1].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EthNet.client[1].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar EthNet.client[1].app[0] bytesRcvd 1000000
+scalar EthNet.client[1].app[0] bytesSent 1000000
+scalar EthNet.client[1].app[0] packetReceived:count 1866
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[1].app[0] packetReceived:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic EthNet.client[1].app[0] endToEndDelay:histogram
+field count 1866
+field mean 0.052723825927117
+field stddev 0.030091777593341
+field min 0.00010986
+field max 0.10473972
+field sum 98.38265918
+field sqrsum 6.8758958186793
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	0.002	35
+bin	0.004	37
+bin	0.006	35
+bin	0.008	37
+bin	0.01	35
+bin	0.012	35
+bin	0.014	36
+bin	0.016	35
+bin	0.018	37
+bin	0.02	35
+bin	0.022	37
+bin	0.024	35
+bin	0.026	37
+bin	0.028	35
+bin	0.03	35
+bin	0.032	37
+bin	0.034	35
+bin	0.036	37
+bin	0.038	35
+bin	0.04	37
+bin	0.042	35
+bin	0.044	36
+bin	0.046	35
+bin	0.048	35
+bin	0.05	37
+bin	0.052	35
+bin	0.054	37
+bin	0.056	35
+bin	0.058	37
+bin	0.06	35
+bin	0.062	36
+bin	0.064	36
+bin	0.066	35
+bin	0.068	37
+bin	0.07	35
+bin	0.072	37
+bin	0.074	34
+bin	0.076	37
+bin	0.078	35
+bin	0.08	36
+bin	0.082	36
+bin	0.084	35
+bin	0.086	37
+bin	0.088	35
+bin	0.09	37
+bin	0.092	35
+bin	0.094	37
+bin	0.096	35
+bin	0.098	35
+bin	0.1	37
+bin	0.102	35
+bin	0.104	15
+bin	0.106	0
+statistic EthNet.client[1].app[0] endToEndDelay:weightedHistogram
+field count 1866
+field mean 0.05271467112976
+field stddev 0.030086507661461
+field min 0.00010986
+field max 0.10473972
+field weights 8000000
+field weightedSum 421717.36903808
+field sqrSumWeights 34299944960
+field weightedSqrSum 29468.394934701
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	107200
+bin	0.002	150080
+bin	0.004	158656
+bin	0.006	150080
+bin	0.008	158656
+bin	0.01	150080
+bin	0.012	150080
+bin	0.014	154368
+bin	0.016	150080
+bin	0.018	158656
+bin	0.02	150080
+bin	0.022	158656
+bin	0.024	150080
+bin	0.026	158656
+bin	0.028	150080
+bin	0.03	150080
+bin	0.032	158656
+bin	0.034	150080
+bin	0.036	158656
+bin	0.038	150080
+bin	0.04	158656
+bin	0.042	150080
+bin	0.044	154368
+bin	0.046	150080
+bin	0.048	150080
+bin	0.05	158656
+bin	0.052	150080
+bin	0.054	158656
+bin	0.056	150080
+bin	0.058	158656
+bin	0.06	150080
+bin	0.062	154368
+bin	0.064	154368
+bin	0.066	150080
+bin	0.068	158656
+bin	0.07	150080
+bin	0.072	158656
+bin	0.074	145792
+bin	0.076	158656
+bin	0.078	150080
+bin	0.08	154368
+bin	0.082	154368
+bin	0.084	150080
+bin	0.086	158656
+bin	0.088	150080
+bin	0.09	158656
+bin	0.092	150080
+bin	0.094	158656
+bin	0.096	150080
+bin	0.098	150080
+bin	0.1	158656
+bin	0.102	150080
+bin	0.104	62912
+bin	0.106	0
+scalar EthNet.client[1].app[0] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[1].app[0] packetSent:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[2].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EthNet.client[2].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EthNet.client[2].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[2].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac.queue packetPopped:count 3737
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.client[2].eth[0].mac.queue packetPopped:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.client[2].eth[0].mac.queue queueingTime:histogram
+field count 3737
+field mean 0.00040904992774952
+field stddev 0.00017396987490587
+field min 0
+field max 0.00068742
+field sum 1.52861958
+field sqrsum 0.00073835370166761
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	21
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	4
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	2
+bin	0.0001	3
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	263
+bin	0.00014	2
+bin	0.00015	1
+bin	0.00016	0
+bin	0.00017	262
+bin	0.00018	0
+bin	0.00019	1
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	264
+bin	0.00023	0
+bin	0.00024	1
+bin	0.00025	1
+bin	0.00026	262
+bin	0.00027	1
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	264
+bin	0.00031	1
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	261
+bin	0.00035	2
+bin	0.00036	3
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	261
+bin	0.0004	3
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	261
+bin	0.00044	2
+bin	0.00045	1
+bin	0.00046	0
+bin	0.00047	261
+bin	0.00048	0
+bin	0.00049	3
+bin	0.0005	0
+bin	0.00051	261
+bin	0.00052	0
+bin	0.00053	2
+bin	0.00054	1
+bin	0.00055	0
+bin	0.00056	262
+bin	0.00057	2
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	261
+bin	0.00061	4
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	261
+bin	0.00065	0
+bin	0.00066	5
+bin	0.00067	0
+bin	0.00068	267
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+bin	0.00086	0
+scalar EthNet.client[2].eth[0].mac.queue queueLength:max 21
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.client[2].eth[0].mac.queue queueLength:timeavg 0.16984662000001
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.client[2].eth[0].mac.queue packetPushed:count 3737
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.client[2].eth[0].mac.queue packetPushed:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.client[2].eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.client[2].eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac "simulated time" 10
+scalar EthNet.client[2].eth[0].mac full-duplex 1
+scalar EthNet.client[2].eth[0].mac "frames/sec sent" 373.7
+scalar EthNet.client[2].eth[0].mac "frames/sec rcvd" 373.6
+scalar EthNet.client[2].eth[0].mac "bits/sec sent" 982377.6
+scalar EthNet.client[2].eth[0].mac "bits/sec rcvd" 982326.4
+scalar EthNet.client[2].eth[0].mac "rx channel idle (%)" 100
+scalar EthNet.client[2].eth[0].mac "rx channel utilization (%)" 0
+scalar EthNet.client[2].eth[0].mac txPk:count 3737
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.client[2].eth[0].mac txPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac packetReceivedFromUpper:count 3737
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.client[2].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 1216738
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac passedUpPk:count 3736
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[2].eth[0].mac passedUpPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.client[2].eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.client[2].eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.client[2].eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.client[2].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.client[2].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.client[2].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.client[2].eth[0].mac rxPkOk:count 3736
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.client[2].eth[0].mac rxPkOk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.client[2].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.client[2].eth[0].encap decapPk:count 3736
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.client[2].eth[0].encap decapPk:sum(packetBytes) 1160660
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.client[2].eth[0].encap encapPk:count 3737
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.client[2].eth[0].encap encapPk:sum(packetBytes) 1149472
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EthNet.client[2].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EthNet.client[2].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EthNet.client[2].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EthNet.client[2].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EthNet.client[2].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EthNet.client[2].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EthNet.client[2].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EthNet.client[2].ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar EthNet.client[2].ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar EthNet.client[2].ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar EthNet.client[2].ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar EthNet.client[2].udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[2].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EthNet.client[2].udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[2].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[2].udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EthNet.client[2].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EthNet.client[2].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar EthNet.client[2].app[0] bytesRcvd 1000000
+scalar EthNet.client[2].app[0] bytesSent 1000000
+scalar EthNet.client[2].app[0] packetReceived:count 1866
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[2].app[0] packetReceived:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic EthNet.client[2].app[0] endToEndDelay:histogram
+field count 1866
+field mean 0.052723825927117
+field stddev 0.030091777593341
+field min 0.00010986
+field max 0.10473972
+field sum 98.38265918
+field sqrsum 6.8758958186793
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	0.002	35
+bin	0.004	37
+bin	0.006	35
+bin	0.008	37
+bin	0.01	35
+bin	0.012	35
+bin	0.014	36
+bin	0.016	35
+bin	0.018	37
+bin	0.02	35
+bin	0.022	37
+bin	0.024	35
+bin	0.026	37
+bin	0.028	35
+bin	0.03	35
+bin	0.032	37
+bin	0.034	35
+bin	0.036	37
+bin	0.038	35
+bin	0.04	37
+bin	0.042	35
+bin	0.044	36
+bin	0.046	35
+bin	0.048	35
+bin	0.05	37
+bin	0.052	35
+bin	0.054	37
+bin	0.056	35
+bin	0.058	37
+bin	0.06	35
+bin	0.062	36
+bin	0.064	36
+bin	0.066	35
+bin	0.068	37
+bin	0.07	35
+bin	0.072	37
+bin	0.074	34
+bin	0.076	37
+bin	0.078	35
+bin	0.08	36
+bin	0.082	36
+bin	0.084	35
+bin	0.086	37
+bin	0.088	35
+bin	0.09	37
+bin	0.092	35
+bin	0.094	37
+bin	0.096	35
+bin	0.098	35
+bin	0.1	37
+bin	0.102	35
+bin	0.104	15
+bin	0.106	0
+statistic EthNet.client[2].app[0] endToEndDelay:weightedHistogram
+field count 1866
+field mean 0.05271467112976
+field stddev 0.030086507661461
+field min 0.00010986
+field max 0.10473972
+field weights 8000000
+field weightedSum 421717.36903808
+field sqrSumWeights 34299944960
+field weightedSqrSum 29468.394934701
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	107200
+bin	0.002	150080
+bin	0.004	158656
+bin	0.006	150080
+bin	0.008	158656
+bin	0.01	150080
+bin	0.012	150080
+bin	0.014	154368
+bin	0.016	150080
+bin	0.018	158656
+bin	0.02	150080
+bin	0.022	158656
+bin	0.024	150080
+bin	0.026	158656
+bin	0.028	150080
+bin	0.03	150080
+bin	0.032	158656
+bin	0.034	150080
+bin	0.036	158656
+bin	0.038	150080
+bin	0.04	158656
+bin	0.042	150080
+bin	0.044	154368
+bin	0.046	150080
+bin	0.048	150080
+bin	0.05	158656
+bin	0.052	150080
+bin	0.054	158656
+bin	0.056	150080
+bin	0.058	158656
+bin	0.06	150080
+bin	0.062	154368
+bin	0.064	154368
+bin	0.066	150080
+bin	0.068	158656
+bin	0.07	150080
+bin	0.072	158656
+bin	0.074	145792
+bin	0.076	158656
+bin	0.078	150080
+bin	0.08	154368
+bin	0.082	154368
+bin	0.084	150080
+bin	0.086	158656
+bin	0.088	150080
+bin	0.09	158656
+bin	0.092	150080
+bin	0.094	158656
+bin	0.096	150080
+bin	0.098	150080
+bin	0.1	158656
+bin	0.102	150080
+bin	0.104	62912
+bin	0.106	0
+scalar EthNet.client[2].app[0] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[2].app[0] packetSent:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[3].lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar EthNet.client[3].lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar EthNet.client[3].lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[3].lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac.queue packetPopped:count 3737
+attr interpolationmode none
+attr title "packet popped, count"
+scalar EthNet.client[3].eth[0].mac.queue packetPopped:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic EthNet.client[3].eth[0].mac.queue queueingTime:histogram
+field count 3737
+field mean 0.00040904992774952
+field stddev 0.00017396987490587
+field min 0
+field max 0.00068742
+field sum 1.52861958
+field sqrsum 0.00073835370166761
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	21
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	4
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	2
+bin	0.0001	3
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	263
+bin	0.00014	2
+bin	0.00015	1
+bin	0.00016	0
+bin	0.00017	262
+bin	0.00018	0
+bin	0.00019	1
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	264
+bin	0.00023	0
+bin	0.00024	1
+bin	0.00025	1
+bin	0.00026	262
+bin	0.00027	1
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	264
+bin	0.00031	1
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	261
+bin	0.00035	2
+bin	0.00036	3
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	261
+bin	0.0004	3
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	261
+bin	0.00044	2
+bin	0.00045	1
+bin	0.00046	0
+bin	0.00047	261
+bin	0.00048	0
+bin	0.00049	3
+bin	0.0005	0
+bin	0.00051	261
+bin	0.00052	0
+bin	0.00053	2
+bin	0.00054	1
+bin	0.00055	0
+bin	0.00056	262
+bin	0.00057	2
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	261
+bin	0.00061	4
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	261
+bin	0.00065	0
+bin	0.00066	5
+bin	0.00067	0
+bin	0.00068	267
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+bin	0.00086	0
+scalar EthNet.client[3].eth[0].mac.queue queueLength:max 21
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar EthNet.client[3].eth[0].mac.queue queueLength:timeavg 0.16984662000001
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar EthNet.client[3].eth[0].mac.queue packetPushed:count 3737
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar EthNet.client[3].eth[0].mac.queue packetPushed:sum(packetBytes) 1227972
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac.queue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar EthNet.client[3].eth[0].mac.queue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac.queue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar EthNet.client[3].eth[0].mac.queue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac "simulated time" 10
+scalar EthNet.client[3].eth[0].mac full-duplex 1
+scalar EthNet.client[3].eth[0].mac "frames/sec sent" 373.7
+scalar EthNet.client[3].eth[0].mac "frames/sec rcvd" 373.6
+scalar EthNet.client[3].eth[0].mac "bits/sec sent" 982377.6
+scalar EthNet.client[3].eth[0].mac "bits/sec rcvd" 982326.4
+scalar EthNet.client[3].eth[0].mac "rx channel idle (%)" 100
+scalar EthNet.client[3].eth[0].mac "rx channel utilization (%)" 0
+scalar EthNet.client[3].eth[0].mac txPk:count 3737
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar EthNet.client[3].eth[0].mac txPk:sum(packetBytes) 1227972
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac packetReceivedFromUpper:count 3737
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar EthNet.client[3].eth[0].mac packetReceivedFromUpper:sum(packetBytes) 1216738
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac passedUpPk:count 3736
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar EthNet.client[3].eth[0].mac passedUpPk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar EthNet.client[3].eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar EthNet.client[3].eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar EthNet.client[3].eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar EthNet.client[3].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar EthNet.client[3].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar EthNet.client[3].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar EthNet.client[3].eth[0].mac rxPkOk:count 3736
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar EthNet.client[3].eth[0].mac rxPkOk:sum(packetBytes) 1227908
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar EthNet.client[3].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar EthNet.client[3].eth[0].encap decapPk:count 3736
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar EthNet.client[3].eth[0].encap decapPk:sum(packetBytes) 1160660
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar EthNet.client[3].eth[0].encap encapPk:count 3737
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar EthNet.client[3].eth[0].encap encapPk:sum(packetBytes) 1149472
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar EthNet.client[3].ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar EthNet.client[3].ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar EthNet.client[3].ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar EthNet.client[3].ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar EthNet.client[3].ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar EthNet.client[3].ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.arp arpReplySent:count 0
+attr source arpReplySent
+attr title "ARP replies sent, count"
+scalar EthNet.client[3].ipv4.arp arpReplySent:sum(packetBytes) 0
+attr source arpReplySent
+attr title "ARP replies sent, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.arp arpRequestSent:count 1
+attr source arpRequestSent
+attr title "ARP request sent, count"
+scalar EthNet.client[3].ipv4.arp arpRequestSent:sum(packetBytes) 28
+attr source arpRequestSent
+attr title "ARP request sent, sum(packetBytes)"
+scalar EthNet.client[3].ipv4.arp arpResolutionFailed:count 0
+attr title "ARP failed resolutions, count"
+scalar EthNet.client[3].ipv4.arp arpResolutionCompleted:count 1
+attr title "ARP completed resolutions, count"
+scalar EthNet.client[3].ipv4.arp arpResolutionInitiated:count 1
+attr title "ARP initiated resolutions, count"
+scalar EthNet.client[3].udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[3].udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar EthNet.client[3].udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[3].udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar EthNet.client[3].udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar EthNet.client[3].udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar EthNet.client[3].udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar EthNet.client[3].app[0] bytesRcvd 1000000
+scalar EthNet.client[3].app[0] bytesSent 1000000
+scalar EthNet.client[3].app[0] packetReceived:count 1866
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar EthNet.client[3].app[0] packetReceived:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic EthNet.client[3].app[0] endToEndDelay:histogram
+field count 1866
+field mean 0.052723825927117
+field stddev 0.030091777593341
+field min 0.00010986
+field max 0.10473972
+field sum 98.38265918
+field sqrsum 6.8758958186793
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	25
+bin	0.002	35
+bin	0.004	37
+bin	0.006	35
+bin	0.008	37
+bin	0.01	35
+bin	0.012	35
+bin	0.014	36
+bin	0.016	35
+bin	0.018	37
+bin	0.02	35
+bin	0.022	37
+bin	0.024	35
+bin	0.026	37
+bin	0.028	35
+bin	0.03	35
+bin	0.032	37
+bin	0.034	35
+bin	0.036	37
+bin	0.038	35
+bin	0.04	37
+bin	0.042	35
+bin	0.044	36
+bin	0.046	35
+bin	0.048	35
+bin	0.05	37
+bin	0.052	35
+bin	0.054	37
+bin	0.056	35
+bin	0.058	37
+bin	0.06	35
+bin	0.062	36
+bin	0.064	36
+bin	0.066	35
+bin	0.068	37
+bin	0.07	35
+bin	0.072	37
+bin	0.074	34
+bin	0.076	37
+bin	0.078	35
+bin	0.08	36
+bin	0.082	36
+bin	0.084	35
+bin	0.086	37
+bin	0.088	35
+bin	0.09	37
+bin	0.092	35
+bin	0.094	37
+bin	0.096	35
+bin	0.098	35
+bin	0.1	37
+bin	0.102	35
+bin	0.104	15
+bin	0.106	0
+statistic EthNet.client[3].app[0] endToEndDelay:weightedHistogram
+field count 1866
+field mean 0.05271467112976
+field stddev 0.030086507661461
+field min 0.00010986
+field max 0.10473972
+field weights 8000000
+field weightedSum 421717.36903808
+field sqrSumWeights 34299944960
+field weightedSqrSum 29468.394934701
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, weightedHistogram"
+attr unit s
+bin	-inf	0
+bin	0	107200
+bin	0.002	150080
+bin	0.004	158656
+bin	0.006	150080
+bin	0.008	158656
+bin	0.01	150080
+bin	0.012	150080
+bin	0.014	154368
+bin	0.016	150080
+bin	0.018	158656
+bin	0.02	150080
+bin	0.022	158656
+bin	0.024	150080
+bin	0.026	158656
+bin	0.028	150080
+bin	0.03	150080
+bin	0.032	158656
+bin	0.034	150080
+bin	0.036	158656
+bin	0.038	150080
+bin	0.04	158656
+bin	0.042	150080
+bin	0.044	154368
+bin	0.046	150080
+bin	0.048	150080
+bin	0.05	158656
+bin	0.052	150080
+bin	0.054	158656
+bin	0.056	150080
+bin	0.058	158656
+bin	0.06	150080
+bin	0.062	154368
+bin	0.064	154368
+bin	0.066	150080
+bin	0.068	158656
+bin	0.07	150080
+bin	0.072	158656
+bin	0.074	145792
+bin	0.076	158656
+bin	0.078	150080
+bin	0.08	154368
+bin	0.082	154368
+bin	0.084	150080
+bin	0.086	158656
+bin	0.088	150080
+bin	0.09	158656
+bin	0.092	150080
+bin	0.094	158656
+bin	0.096	150080
+bin	0.098	150080
+bin	0.1	158656
+bin	0.102	150080
+bin	0.104	62912
+bin	0.106	0
+scalar EthNet.client[3].app[0] packetSent:count 1
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar EthNet.client[3].app[0] packetSent:sum(packetBytes) 1000000
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+
